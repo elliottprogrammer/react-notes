@@ -6,7 +6,7 @@ import NotesList from './NotesList';
 const NotesPage = ({notes, handleSubmit, handleDelete}) => {
     return (
         <div>
-            <NoteForm addNote={(note) => handleSubmit(note)} formType="add" />
+            <NoteForm addNote={(note) => handleSubmit(note)} />
             <NotesList notes={notes} deleteNote={(id) => handleDelete(id)} />
         </div>
     )

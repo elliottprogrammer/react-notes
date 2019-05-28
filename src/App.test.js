@@ -1,9 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
+import { findByTestAttr } from './utils/testUtils';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('App Component', () => {
+    it('should render without errors', () => {
+        const component = shallow(<App />);
+        const wrapper = findByTestAttr(component, 'appComponent');
+        expect(wrapper.length).toBe(1)
+    });
+})

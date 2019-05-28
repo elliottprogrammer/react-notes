@@ -59,7 +59,7 @@ class NoteForm extends Component {
         return (
             <div className="jumbotron mb-5">
                 <h4>Add Note:</h4>
-                <form className="border bg-light border-light p-3" onSubmit={this.handleSubmit}>
+                <form className="border bg-light border-light p-3" data-testid="note-form" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="title">Title</label>
                         <input
@@ -82,7 +82,7 @@ class NoteForm extends Component {
                         />
                         {errors.note && (<div className="invalid-feedback">{errors.note}</div>)}
                     </div>
-                    <button className="btn btn-success" type="submit">Submit</button>
+                    <button className="btn btn-success" data-testid="submit-button" type="submit">Submit</button>
                 </form> 
             </div>
         )

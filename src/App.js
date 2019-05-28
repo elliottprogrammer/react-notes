@@ -48,7 +48,7 @@ class App extends Component {
         return (
         <Router>
             <Header />
-            <main>
+            <main data-test="appComponent">
                 <div className="container py-5">
                     <Switch>
                         <Route exact path="/notes" render={(props) => <NotesPage {...props} notes={notes} handleSubmit={(note) => this.addNote(note)} handleDelete={(id) => this.deleteNote(id)} />} />
