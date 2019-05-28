@@ -18,7 +18,6 @@ const SingleNotePage = ({ match, notes }) => {
                             <Link to={`/notes/edit/${note.id}`} className="btn btn-light">Edit Note</Link>
                         </div>
                         <p>{note.note}</p>
-                        <p>{note.id}</p>
                     </li>
                 ))}
             </ul>
