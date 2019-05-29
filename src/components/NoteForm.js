@@ -59,28 +59,30 @@ class NoteForm extends Component {
         return (
             <div className="jumbotron mb-5">
                 <h4>Add Note:</h4>
-                <form className="border bg-light border-light p-3" data-testid="note-form" onSubmit={this.handleSubmit}>
+                <form className="border bg-light border-light p-3" data-test="noteForm" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="title">Title</label>
                         <input
+                            data-test="titleInput"
                             className={classnames('form-control', { 'is-invalid': errors.title })}
                             type="text"
                             name="title"
                             onChange={this.handleInputChange}
                             value={title}
                         />
-                        {errors.title && (<div className="invalid-feedback">{errors.title}</div>)}
+                        {errors.title && (<div data-test="titleInputError" className="invalid-feedback">{errors.title}</div>)}
                     </div>
                     <div className="form-group">
                         <label htmlFor="note">Note</label>
                         <input
+                            data-test="noteInput"
                             className={classnames('form-control', { 'is-invalid': errors.note })}
                             type="text"
                             name="note"
                             onChange={this.handleInputChange}
                             value={note}
                         />
-                        {errors.note && (<div className="invalid-feedback">{errors.note}</div>)}
+                        {errors.note && (<div data-test="noteInputError" className="invalid-feedback">{errors.note}</div>)}
                     </div>
                     <button className="btn btn-success" data-testid="submit-button" type="submit">Submit</button>
                 </form> 
