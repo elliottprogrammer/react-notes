@@ -84,7 +84,7 @@ class NoteForm extends Component {
                         />
                         {errors.note && (<div data-test="noteInputError" className="invalid-feedback">{errors.note}</div>)}
                     </div>
-                    <button className="btn btn-success" data-testid="submit-button" type="submit">Submit</button>
+                    <button className="btn btn-success" data-test="submitButton" type="submit">Submit</button>
                 </form> 
             </div>
         )

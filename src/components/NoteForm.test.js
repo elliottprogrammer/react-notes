@@ -22,9 +22,10 @@ describe('NoteForm Component', () => {
 
     describe('Renders', () => {
         let wrapper;
+        let addNoteEvent = jest.fn();
         beforeEach(() => {
             const props = {
-                addNote: jest.fn(),
+                addNote: addNoteEvent,
             }
             wrapper = setUp(props);
         });
@@ -42,6 +43,33 @@ describe('NoteForm Component', () => {
         it('should render the note input field', () => {
             const noteInput = findByTestAttr(wrapper, 'noteInput');
             expect(noteInput.length).toBe(1);
+        });
+
+        it('should render the submit button', () => {
+            const submitButton = findByTestAttr(wrapper, 'submitButton');
+            expect(submitButton.length).toBe(1);
+        });
+    });
+
+    describe('Submit form without values', () => {
+        let wrapper;
+        let addNoteEvent = jest.fn();
+        beforeEach(() => {
+            const props = {
+                addNote: addNoteEvent,
+            }
+            wrapper = setUp(props);
+        });
+        it('should render errors on submit', () => {
+            const form = findByTestAttr(wrapper, 'noteForm');
+            // simulate form submit
+            form.simulate('submit', { preventDefault: () => {}});
+            const titleInputError = findByTestAttr(wrapper, 'titleInputError');
+            // expect render of title input error
+            expect(titleInputError.length).toBe(1);
+            const noteInputError = findByTestAttr(wrapper, 'noteInputError');
+            // expect render of note input error
+            expect(noteInputError.length).toBe(1);
         });
     });
 
