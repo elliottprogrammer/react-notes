@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { findByTestAttr } from '../utils/testUtils';
+import { findByTestAttr, checkProps } from '../utils/testUtils';
 import NotesList from './NotesList';
 
 const setUp = (props={}) => {
@@ -9,6 +9,23 @@ const setUp = (props={}) => {
 }
 
 describe('NotesList Component', () => {
+
+    describe('Check PropTypes', () => {
+        it('should not throw a warning', () => {
+            const expectedProps = {
+                notes: [
+                    {
+                        id: 'testid1',
+                        title: 'Note Title 1',
+                        note: 'Note description 1'
+                    },
+                ],
+                deleteNote: jest.fn(), 
+            }
+            const propsErr = checkProps(NotesList, expectedProps);
+            expect(propsErr).toBeUndefined();
+        });
+    });
     
     describe('Have notes prop', () => {
         let wrapper;

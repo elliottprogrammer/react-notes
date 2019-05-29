@@ -32,6 +32,7 @@
         ]
     },
     "devDependencies": {
+        "check-prop-types": "^1.1.2",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.13.2",
         "jest-enzyme": "^7.0.2"

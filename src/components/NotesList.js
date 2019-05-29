@@ -25,7 +25,13 @@ const NotesList = ({ notes, deleteNote }) => {
 }
 
 NotesList.propTypes = {
-    notes: PropTypes.array,
+    notes: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            note: PropTypes.string.isRequired,
+        }).isRequired
+    ),
     deleteNote: PropTypes.func.isRequired,
 }
 
