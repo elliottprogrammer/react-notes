@@ -4,8 +4,6 @@
 
 [https://react-notes.elliottprogrammer.com/](https://react-notes.elliottprogrammer.com/)
 
-### Paragon technical challenge
-
 #### Details
 
 Note since there will be no back end to this app, the routes don't need to be POST routes, I just included them for clarity of what the different actions should be.
